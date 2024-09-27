@@ -1,0 +1,73 @@
+.playlist {
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(47, 47, 47);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.288);
+}
+.list-unit {
+  display: grid;
+  grid-template-columns: 168px 1fr 20px;
+  column-gap: 6px;
+  margin-bottom: 8px;
+  background-color: rgb(53, 53, 53);
+  cursor: pointer;
+}
+.list-unit:active {
+  opacity: 0.5;
+}
+.unit-dp {
+  position: relative;
+  height: 100%;
+}
+.dp {
+  height: 100%;
+  width: 168px;
+  object-fit: cover;
+}
+.video-time {
+  position: absolute;
+  bottom: 9px;
+  right: 5px;
+  color: white;
+  padding: 2px 6px;
+  border-radius: 2px;
+  background-color: rgba(12, 12, 12, 0.5);
+  font-family: roboto;
+  font-size: 12px;
+}
+.unit-details {
+  padding-top: 2px;
+  height: 94px;
+  display: flex;
+  flex-direction: column;
+}
+.topic {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  margin-bottom: 6px;
+  color: white;
+}
+.author {
+  font-size: 12px;
+  color: rgb(155, 155, 155);
+  margin-bottom: 5px;
+}
+.stats {
+  font-size: 12px;
+  color: rgb(155, 155, 155);
+  margin-bottom: 16px;
+}
+.hover-dot-icon {
+  width: 20px;
+}
+.hover-dot{
+  opacity: 0;
+  transition: 250ms;
+}
+.list-unit:hover .hover-dot{
+  opacity: 1;
+}
+.list-unit:hover{
+  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.301);
+}

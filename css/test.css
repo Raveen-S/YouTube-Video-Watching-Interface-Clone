@@ -1,0 +1,54 @@
+.container {
+  margin: 80px 12px 5px 12px;
+}
+@media (min-width: 1021px) {
+  .container {
+    display: grid;
+    column-gap: 20px;
+    grid-template-columns: 1fr 400px;
+    grid-template-rows: minmax(100px, max-content) 90px max-content 1fr;
+    grid-template-areas:
+      "display list"
+      "stats list"
+      "channel list"
+      "comments list";
+  }
+}
+@media (max-width: 1020px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(100px, max-content) 90px max-content 1fr max-content;
+    grid-template-areas:
+      "display "
+      "stats "
+      "channel "
+      "list "
+      "comments ";
+  }
+}
+@media (max-width: 600px) {
+  .stats-views {
+    opacity: 0;
+  }
+}
+.window {
+  grid-area: display;
+  background-color: blueviolet;
+}
+.video-stats {
+  grid-area: stats;
+  background-color: rgb(57, 118, 172);
+}
+.channel-stats {
+  grid-area: channel;
+  background-color: rgb(0, 139, 139);
+}
+.comments {
+  grid-area: comments;
+  background-color: rgb(4, 64, 71);
+}
+.playlist {
+  grid-area: list;
+  background-color: rgb(110, 36, 36);
+}

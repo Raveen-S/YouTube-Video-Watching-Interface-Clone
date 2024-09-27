@@ -1,0 +1,453 @@
+.comments {
+    font-family: roboto;
+    padding: 20px 20px 0 10px;
+    background-color: rgb(47, 47, 47);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.288);
+  }
+  .comment-header {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+  }
+  .nmbr-of-comments {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 1px 30px 0 0;
+    color: white;
+  }
+  .sort {
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    font-weight: 500;
+    color: white;
+    cursor: pointer;
+    transition: 250ms;
+    padding: 2px 8px;
+    border-radius: 2px;
+  }
+  .sort:active{
+    opacity: 0.5;
+  }
+  .sort-icon {
+    height: 20px;
+    padding-right: 10px;
+  }
+  .user-comment-container {
+    display: flex;
+    margin: 0 0 30px -2px;
+  }
+  .user-pic {
+    width: 45px;
+    margin-right: 15px;
+    cursor: pointer;
+    transition: 250ms;
+  }
+  .user-pic:active{
+    opacity: 0.5;
+  }
+  .comment-bar {
+    display: flex;
+    height: 20px;
+    margin-top: 5px;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    border-bottom: 1px solid rgb(99, 99, 99);
+    flex: 1;
+    color: white;
+  }
+  .comment-bar::placeholder{
+    color: rgb(194, 194, 194);
+  }
+  .comment-bar:focus{
+    background-color:rgb(50, 50, 50);
+    color: white;
+  }
+  .commented-unit {
+    display: flex;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+  .commented-unit:hover {
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.288);
+  }
+  .commented-channel-pic {
+    width: 38px;
+    height: 38px;
+    margin-right: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 250ms;
+    opacity: 1;
+  }
+  .commented-channel-pic:active{
+    opacity: 0.5;
+  }
+  .commented-discription {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .comment-name-unit {
+    display: flex;
+    padding-bottom: 5px;
+    align-items: baseline;
+  }
+  .commented-person {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    padding-right: 10px;
+    cursor: pointer;
+    transition: 150ms;
+  }
+  .commented-person:active {
+    color: rgba(255, 255, 255, 0.548);
+  }
+  .commented-time {
+    font-size: 12px;
+    color: rgb(209, 209, 209);
+  }
+  .commented-text {
+    font-size: 13px;
+    padding-bottom: 15px;
+    color: white;
+  }
+  .commenter-options {
+    display: flex;
+    margin-left: -4px;
+    margin-bottom: 6px;
+  }
+  .commenter-options img {
+    width: 20px;
+    cursor: pointer;
+  }
+  .commenter-options div {
+    font-size: 12px;
+    font-family: roboto;
+    color: white;
+    padding: 2px 5px 0 5px;
+    cursor: pointer;
+  }
+  .commenter-options img:active,
+  .commenter-options .com-reply:active{
+    opacity: 0.5;
+  }
+  .comment-like-icon {
+    margin-top: -9px;
+  }
+  .comment-dislike-icon {
+    margin-top: -2px;
+  }
+  .view-reply-option {
+    position: relative;
+    display: grid;
+    grid-template-columns: 18px 1fr;
+    grid-template-rows: 10px max-content;
+    row-gap: 10px;
+    grid-template-areas:
+      "icon text"
+      "icon reply";
+    align-items: center;
+  }
+  .notifi-down-icon {
+    position: absolute;
+    top: 0;
+    grid-area: icon;
+    width: 10px;
+    height: 9px;
+    transform: rotate(180deg);
+    margin-right: 10px;
+  }
+
+  /*CSS part for View Reply Section unit 1 */
+  .replies-drawer-one {
+    grid-area: reply;
+    height: 0;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  #reply-input-one {
+    display: none;
+  }
+  #reply-lable-one:before {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    white-space: nowrap;
+    grid-area: text;
+    content: "View Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #reply-input-one:checked ~ #reply-lable-one:before {
+    content: "Hide Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+  }
+  #reply-input-one:checked ~ .replies-drawer-one {
+    background-color: rgb(43, 43, 43);
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: 600ms linear cb-pop;
+  }
+  #reply-input-one:checked ~ .notifi-down-icon {
+    transform: rotate(0deg);
+  }
+  /*CSS part for View Reply Section unit 2 */
+  .replies-drawer-two {
+    grid-area: reply;
+    height: 0;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  #reply-input-two {
+    display: none;
+  }
+  #reply-lable-two:before {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    white-space: nowrap;
+    grid-area: text;
+    content: "View Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #reply-input-two:checked ~ #reply-lable-two:before {
+    content: "Hide Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+  }
+  #reply-input-two:checked ~ .replies-drawer-two {
+    background-color: rgb(43, 43, 43);
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: 300ms linear cb-pop;
+  }
+
+  #reply-input-two:checked ~ .notifi-down-icon {
+    transform: rotate(0deg);
+  }
+  /*CSS part for View Reply Section unit 3 */
+  .replies-drawer-three {
+    grid-area: reply;
+    height: 0;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  #reply-input-three {
+    display: none;
+  }
+  #reply-lable-three:before {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    white-space: nowrap;
+    grid-area: text;
+    content: "View Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #reply-input-three:checked ~ #reply-lable-three:before {
+    content: "Hide Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+  }
+  #reply-input-three:checked ~ .replies-drawer-three {
+    background-color: rgb(43, 43, 43);
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: 300ms linear cb-pop;
+  }
+  #reply-input-three:checked ~ .notifi-down-icon {
+    transform: rotate(0deg);
+  }
+  /*CSS part for View Reply Section unit 4 */
+  .replies-drawer-four {
+    grid-area: reply;
+    height: 0;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  #reply-input-four {
+    display: none;
+  }
+  #reply-lable-four:before {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    white-space: nowrap;
+    grid-area: text;
+    content: "View Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #reply-input-four:checked ~ #reply-lable-four:before {
+    content: "Hide Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+  }
+  #reply-input-four:checked ~ .replies-drawer-four {
+    background-color: rgb(43, 43, 43);
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: 300ms linear cb-pop;
+  }
+  #reply-input-four:checked ~ .notifi-down-icon {
+    transform: rotate(0deg);
+  }
+  /*CSS part for View Reply Section unit 5 */
+  .replies-drawer-five {
+    grid-area: reply;
+    height: 0;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  #reply-input-five {
+    display: none;
+  }
+  #reply-lable-five:before {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    white-space: nowrap;
+    grid-area: text;
+    content: "View Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #reply-input-five:checked ~ #reply-lable-five:before {
+    content: "Hide Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+  }
+  #reply-input-five:checked ~ .replies-drawer-five {
+    background-color: rgb(43, 43, 43);
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: 300ms linear cb-pop;
+  }
+  #reply-input-five:checked ~ .notifi-down-icon {
+    transform: rotate(0deg);
+  }
+  /*CSS part for View Reply Section unit 6 */
+  .replies-drawer-six {
+    grid-area: reply;
+    height: 0;
+    overflow: hidden;
+    margin-right: 25px;
+  }
+  #reply-input-six {
+    display: none;
+  }
+  #reply-lable-six:before {
+    position: absolute;
+    left: 0px;
+    top: -4px;
+    white-space: nowrap;
+    grid-area: text;
+    content: "View Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+    cursor: pointer;
+  }
+  #reply-input-six:checked ~ #reply-lable-six:before {
+    content: "Hide Replies";
+    color: rgb(57, 184, 235);
+    font-size: 14px;
+  }
+  #reply-input-six:checked ~ .replies-drawer-six {
+    background-color: rgb(43, 43, 43);
+    height: max-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    animation: 300ms linear cb-pop;
+  }
+  #reply-input-six:checked ~ .notifi-down-icon {
+    transform: rotate(0deg);
+  }
+
+  /*
+!
+!
+!sub reply commented unit
+!
+!
+*/
+  .reply-commented-unit {
+    display: flex;
+    margin: 5px 0 0 0;
+  }
+  .reply-commented-channel-pic {
+    width: 38px;
+    height: 38px;
+    margin-right: 15px;
+    border-radius: 30px;
+    cursor: pointer;
+  }
+  .reply-commented-discription {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+  }
+  .reply-comment-name-unit {
+    display: flex;
+    padding-bottom: 5px;
+    align-items: baseline;
+  }
+  .reply-commented-person {
+    color: white;
+    font-size: 13px;
+    font-weight: 500;
+    padding-right: 10px;
+    cursor: pointer;
+  }
+  .reply-commented-time {
+    font-size: 12px;
+    color: rgb(209, 209, 209);
+  }
+  .reply-commented-text {
+    font-size: 13px;
+    padding-bottom: 15px;
+    color: white;
+  }
+  .reply-commenter-options {
+    display: flex;
+    margin-left: -4px;
+    margin-bottom: 6px;
+  }
+  .reply-commenter-options img {
+    width: 20px;
+    cursor: pointer;
+  }
+  .reply-commenter-options div {
+    font-size: 12px;
+    font-family: roboto;
+    color: white;
+    cursor: pointer;
+    padding: 2px 5px 0 5px;
+  }
+  .reply-comment-like-icon {
+    margin-top: -9px;
+  }
+  .reply-comment-dislike-icon {
+    margin-top: -2px;
+  }
+  .reply-commented-channel-pic:active,
+  .reply-commented-person:active,
+  .reply-commenter-options img:active,
+  .reply-commenter-options div:active{
+    opacity: 0.5;
+  }

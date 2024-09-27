@@ -1,0 +1,136 @@
+.channel-stats{
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 10px 16px 10px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+    background-color: rgb(47, 47, 47);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.288);
+}
+.channel-stats div{
+    font-family: roboto;
+}
+.channel-dp{
+    margin-right: 15px;
+}
+.channel-dp img{
+    height:55px;
+    width: 55px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 250ms;
+}
+.channel-dp img:active{
+    opacity: 0.5;
+}
+.channel-name:active{
+    color: rgba(255, 255, 255, 0.555);
+}
+.channel-description{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding-top: 10px;
+}
+.channel-name{
+    font-weight: 500;
+    font-size: 14px;
+    color: white;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: 250ms;
+}
+.subscribers{
+    font-size: 12px;
+    color: rgb(177, 177, 177);
+    padding-bottom: 5px;
+}
+.video-des{
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(207, 207, 207);
+    padding-bottom: 5px;
+}
+.keywords{
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(0, 102, 255);
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: 250ms;
+}
+.keywords:active{
+    opacity: 0.5;
+}
+#toggle{
+    display: none;
+}
+.toggle-lable::before {
+    content: "SHOW MORE";
+    font-family: roboto;
+    font-weight: 500;
+    font-size: 12px;
+    color: rgb(182, 182, 182);
+    display: inline-block;
+    cursor: pointer;
+}
+#toggle:checked ~ .expand{
+    height: max-content;
+    animation: 300ms linear cb-pop;
+}
+@keyframes cb-pop{
+    0%{ opacity: 0; }
+    33%{ opacity: 0.33; }
+    66%{ opacity: 0.66; }
+    100%{ opacity: 1; }
+    }
+#toggle:checked ~ label:before{
+    content: "SHOW LESS";
+}
+.expand{
+    height: 0;
+    overflow: hidden;
+    color: white;
+    background-color: rgba(41, 41, 41, 0.507);
+    border-radius: 3px;
+    padding-left: 8px;
+    padding-right: 8px;   
+    margin: 5px 0 5px 15px;
+}
+.para{
+    font-size: 13px;
+    color: rgb(194, 194, 194);
+    text-align: justify;
+}
+.para-topic{
+    font-size: 14px;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    padding-bottom: 5px;
+}
+.sub-container{
+    padding-top: 10px;
+}
+.sections{
+    padding-top: 5px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgb(100, 100, 100);
+}
+.subscribe{
+    font-family: roboto;
+    font-weight: 500;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(255, 0, 0);
+    padding: 10px 16px;
+    border-radius: 2px;
+    border: none;
+    cursor: pointer;
+    transition: 250ms;
+}
+.subscribe:hover{
+    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.274);
+}
+.subscribe:active{
+    opacity: 0.5;
+}
